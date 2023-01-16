@@ -7,6 +7,18 @@ content:
     - url: '.'
       branches: HEAD
       start_path: src/docs/asciidoc
+asciidoc:
+  attributes:
+    page-downloadable-asset-keys: 'pdf-web,pdf-print,epub'
+    page-downloadable-asset-pdf-web-title: 'PDF (web)'
+    page-downloadable-asset-pdf-web-link: 'attachment$pdf-web/index.pdf'
+    page-downloadable-asset-pdf-print-title: 'PDF (print)'
+    page-downloadable-asset-pdf-print-link: 'attachment$pdf-print/index.pdf'
+    page-downloadable-asset-epub-title: 'EPUB3'
+    page-downloadable-asset-epub-link: 'attachment$epub3/index.epub'
+antora:
+  extensions:
+    - '@antora/collector-extension'
 ui:
   bundle:
     url: https://github.com/Mogztter/mini-book-default-ui/releases/download/v0.2.2/ui-bundle.zip

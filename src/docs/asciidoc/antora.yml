@@ -10,6 +10,26 @@ asciidoc:
     author: Your Name
     revnumber: 1.0
     revyear: 2021
-    email: youremail@...
+    email: email@domain.org
     subject: Whatever
     keywords: Something, Else
+ext:
+  collector:
+    - run:
+        command: ./gradlew :pdf
+      scan:
+        dir: build/asciidoc/pdf-screen
+        files: index.pdf
+        base: modules/ROOT/attachments/pdf-web
+    - run:
+        command: ./gradlew :prepress
+      scan:
+        dir: build/asciidoc/pdf-prepress
+        files: index.pdf
+        base: modules/ROOT/attachments/pdf-print
+    - run:
+        command: ./gradlew :epub
+      scan:
+        dir: build/asciidoc/epub3
+        files: index.epub
+        base: modules/ROOT/attachments/epub3
